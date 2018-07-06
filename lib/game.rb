@@ -66,5 +66,6 @@ class Game
   end
   
   def self.wargame
-    
+    cell = rand(9)
+    board = Board.new
 end

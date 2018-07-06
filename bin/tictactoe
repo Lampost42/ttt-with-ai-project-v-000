@@ -2,7 +2,7 @@
 
 require_relative '../config/environment'
 
-board = nil
+board = Board.new
 play = "Y"
 
 puts "Let's play Tic Tac Toe!"

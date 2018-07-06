@@ -19,7 +19,7 @@ until play == "N"
     if wg == "Y"
       winner = []
       count = 0
-      while count < 1000
+      while count < 10
         board = Game.wargame
         game = Game.new(player_1, player_2, board)
         game.play

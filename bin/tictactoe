@@ -16,12 +16,11 @@ until play == "N"
     wg = gets.chomp
     if wg = "Y"
       board = Game.wargames
-      
-    player_1 = Players::Computer.new("X")
-    player_2 = Players::Computer.new("O")
-    Game.new(player_1, player_2, board).play
-    puts "Would you like to play again? (Y/N)"
-    play = gets.chomp
+      player_1 = Players::Computer.new("X")
+      player_2 = Players::Computer.new("O")
+      Game.new(player_1, player_2, board).play
+      puts "Would you like to play again? (Y/N)"
+      play = gets.chomp
   when 1
     puts "Would you like to go first? (Y/N)"
     turn = gets.chomp

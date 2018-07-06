@@ -23,10 +23,10 @@ until play == "N"
         player_2 = Players::Computer.new("O")
         game = Game.new(player_1, player_2, board)
         game.play
-        winner.push(game.winner)
+        winner.push(game.winner) unless game.winner == nil
         count += 1
       end
-      puts "X won #{winner.count  
+      puts "X won #{winner.count("X")} times. O won #{winner.count("O")} times.   
       
       puts "Would you like to play again? (Y/N)"
       play = gets.chomp

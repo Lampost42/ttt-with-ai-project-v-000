@@ -14,8 +14,8 @@ until play == "N"
   when 0
     puts "Wargames? (Y/N)"
     wg = gets.chomp
-    winner = []
     if wg = "Y"
+      winner = []
       count = 0
       while count < 1000
         board = Game.wargames
@@ -26,10 +26,12 @@ until play == "N"
         winner.push(game.winner) unless game.winner == nil
         count += 1
       end
-      puts "X won #{winner.count("X")} times. O won #{winner.count("O")} times.   
-      
-      puts "Would you like to play again? (Y/N)"
-      play = gets.chomp
+      puts "X won #{winner.count("X")} times. O won #{winner.count("O")} times. #{1000 - winner.count("X") - winner.count("O")} draws."
+    else
+      Game.new(player_1, player_2, board).play
+    end
+    puts "Would you like to play again? (Y/N)"
+    play = gets.chomp
   when 1
     puts "Would you like to go first? (Y/N)"
     turn = gets.chomp

@@ -64,11 +64,5 @@ class Game
     puts "Congratulations #{self.winner}!" if self.won?
     puts "Cat's Game!" if self.draw?
   end
-  
-  def self.wargame
-    cell = rand(9)
-    board = Board.new
-    board.cells[cell] = "X"
-    board
-  end
+
 end

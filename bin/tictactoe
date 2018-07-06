@@ -2,16 +2,19 @@
 
 require_relative '../config/environment'
 
+board = nil
 play = "Y"
 
 puts "Let's play Tic Tac Toe!"
 
 until play == "N"
-
   puts "How many human players?"
   players = gets.chomp.to_i
   case players
   when 0
+    puts "Wargames? (Y/N)"
+    wg = gets.chomp
+    board = Game.wargames
     player_1 = Players::Computer.new("X")
     player_2 = Players::Computer.new("O")
   when 1
@@ -28,7 +31,7 @@ until play == "N"
       player_1 = Players::Human.new("X")
       player_2 = Players::Human.new("O")
   end
-  game = Game.new(player_1, player_2)
+  game = Game.new(player_1, player_2, board)
 
   game.play
   

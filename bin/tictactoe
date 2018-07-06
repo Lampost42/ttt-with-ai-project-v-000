@@ -26,7 +26,7 @@ until play == "N"
         winner.push(game.winner)
         count += 1
       end
-        
+      puts "X won #{winner.count  
       
       puts "Would you like to play again? (Y/N)"
       play = gets.chomp

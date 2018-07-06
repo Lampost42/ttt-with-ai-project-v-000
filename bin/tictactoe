@@ -23,7 +23,10 @@ until play == "N"
         player_2 = Players::Computer.new("O")
         game = Game.new(player_1, player_2, board)
         game.play
-        winner.pop(game.winner)
+        winner.push(game.winner)
+        count += 1
+      end
+        
       
       puts "Would you like to play again? (Y/N)"
       play = gets.chomp

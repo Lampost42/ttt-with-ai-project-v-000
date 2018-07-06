@@ -14,11 +14,17 @@ until play == "N"
   when 0
     puts "Wargames? (Y/N)"
     wg = gets.chomp
+    winner = []
     if wg = "Y"
-      board = Game.wargames
-      player_1 = Players::Computer.new("X")
-      player_2 = Players::Computer.new("O")
-      game = Game.new(player_1, player_2, board).play
+      count = 0
+      while count < 1000
+        board = Game.wargames
+        player_1 = Players::Computer.new("X")
+        player_2 = Players::Computer.new("O")
+        game = Game.new(player_1, player_2, board)
+        game.play
+        winner.pop(game.winner)
+      
       puts "Would you like to play again? (Y/N)"
       play = gets.chomp
   when 1

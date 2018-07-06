@@ -28,6 +28,7 @@ until play == "N"
       end
       puts "X won #{winner.count("X")} times. O won #{winner.count("O")} times. #{1000 - winner.count("X") - winner.count("O")} draws."
     else
+      
       Game.new(player_1, player_2, board).play
     end
     puts "Would you like to play again? (Y/N)"

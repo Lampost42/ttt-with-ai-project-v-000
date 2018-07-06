@@ -14,24 +14,6 @@ until play == "N"
   when 0
     player_1 = Players::Computer.new("X")
     player_2 = Players::Computer.new("O")
-    puts "Wargames? (Y/N)"
-    wg = gets.chomp
-    if wg == "Y"
-      winner = []
-      count = 0
-      while count < 10
-        board = Game.wargame
-        game = Game.new(player_1, player_2, board)
-        game.play
-        winner.push(game.winner) unless game.winner == nil
-        count += 1
-      end
-      puts "X won #{winner.count("X")} times. O won #{winner.count("O")} times. #{1000 - winner.count("X") - winner.count("O")} draws."
-    else
-      Game.new(player_1, player_2, board).play
-    end
-    puts "Would you like to play again? (Y/N)"
-    play = gets.chomp
   when 1
     puts "Would you like to go first? (Y/N)"
     turn = gets.chomp
@@ -42,15 +24,9 @@ until play == "N"
       player_1 = Players::Computer.new("X")
       player_2 = Players::Human.new("O")
     end
-    Game.new(player_1, player_2, board).play
-    puts "Would you like to play again? (Y/N)"
-    play = gets.chomp
   when 2
     player_1 = Players::Human.new("X")
     player_2 = Players::Human.new("O")
-    Game.new(player_1, player_2, board).play
-    puts "Would you like to play again? (Y/N)"
-    play = gets.chomp
   end
 
 

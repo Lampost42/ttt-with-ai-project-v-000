@@ -14,7 +14,9 @@ until play == "N"
   when 0
     puts "Wargames? (Y/N)"
     wg = gets.chomp
-    board = Game.wargames
+    if wg = "Y"
+      board = Game.wargames
+      
     player_1 = Players::Computer.new("X")
     player_2 = Players::Computer.new("O")
   when 1
@@ -33,7 +35,6 @@ until play == "N"
   end
   game = Game.new(player_1, player_2, board)
 
-  game.play
   
   puts "Would you like to play again? (Y/N)"
   play = gets.chomp

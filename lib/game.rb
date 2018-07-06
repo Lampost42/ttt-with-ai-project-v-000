@@ -68,4 +68,7 @@ class Game
   def self.wargame
     cell = rand(9)
     board = Board.new
+    board.cells[cell] = "X"
+    board
+  end
 end

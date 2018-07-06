@@ -33,7 +33,7 @@ until play == "N"
       player_1 = Players::Human.new("X")
       player_2 = Players::Human.new("O")
   end
-  game = Game.new(player_1, player_2, board)
+Game.new(player_1, player_2, board)
 
   
   puts "Would you like to play again? (Y/N)"

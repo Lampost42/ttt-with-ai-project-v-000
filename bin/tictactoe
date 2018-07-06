@@ -30,11 +30,11 @@ until play == "N"
       player_2 = Players::Human.new("O")
     end
   when 2
-      player_1 = Players::Human.new("X")
-      player_2 = Players::Human.new("O")
-      Game.new(player_1, player_2, board).play
-      puts "Would you like to play again? (Y/N)"
-      play = gets.chomp
+    player_1 = Players::Human.new("X")
+    player_2 = Players::Human.new("O")
+    Game.new(player_1, player_2, board).play
+    puts "Would you like to play again? (Y/N)"
+    play = gets.chomp
   end
 
 
